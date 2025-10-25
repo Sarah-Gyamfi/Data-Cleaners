@@ -23,7 +23,7 @@ How to Run
 
 
 
-txt_data_cleaner.py
+txt_data_cleaner
 
  Data Cleaner with Hashed Column
 
