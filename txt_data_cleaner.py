@@ -28,10 +28,12 @@ def data_cleaner():
         elif new_df[column].dtype == "object":
             new_df[column] = df[column].fillna("Missing")
 
-    column_names =["Add", "Column", "Headings", "In", "These" , "Brackets"]
+    column_names =["Add", "Column", "Headings", "In", "These" , "Brackets."]
     new_df.columns = column_names
+    new_df.columns = [col.upper() for col in new_df.columns]
 
     new_df["Add_column_header_For_hashed_data"] = df["Unhashed_column_name"].apply(lambda name: hashlib.sha256 (str(name).encode("utf-8")).hexdigest())
+    new_df=new_df.drop(columns=["original names of the columns which have been hashed "])
     
 
 
